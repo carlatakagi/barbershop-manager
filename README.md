@@ -8,7 +8,7 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/carlatakagi/barbershop-manager?color=%2304D361">
   
-  <a href="https://github.com/carlatakagi/barbershop-manager/commits/master">
+  <a href="https://github.com/carlatakagi/barbershop-manager/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/carlatakagi/barbershop-manager">
   </a>
     
