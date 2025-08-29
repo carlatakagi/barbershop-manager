@@ -44,7 +44,14 @@ Tabela de conteúdos
 
 ## ⚙️ Habilidades desenvolvidas
 
-- [x] 
+- [x] Domain-Driven Design (DDD)
+- [x] Tratativa de erros
+- [x] Filtro de exceções
+- [x] Testes de unidade
+- [x] Banco de dados
+- [x] Injeção de dependência
+- [x] Assincronismo
+- [x] Princípios de SOLID
 
 ---
 
