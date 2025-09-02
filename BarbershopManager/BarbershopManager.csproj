@@ -7,13 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BarbershopManager.Application\NovaPasta\**" />
+    <Compile Remove="NovaPasta\**" />
+    <Content Remove="BarbershopManager.Application\NovaPasta\**" />
+    <Content Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="BarbershopManager.Application\NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="BarbershopManager.Application\NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Braintree" Version="5.35.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BarbershopManager.Communication\" />
-    <Folder Include="BarbershopManager.Application\" />
+    <Folder Include="BarbershopManager.Application\UseCases\CreateRevenue\" />
     <Folder Include="BarbershopManager.Exception\" />
     <Folder Include="BarbershopManager.Infrastructure\" />
   </ItemGroup>
