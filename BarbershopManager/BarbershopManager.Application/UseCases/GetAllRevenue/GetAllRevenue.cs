@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using BarbershopManager.BarbershopManager.Communication.Responses;
-using BarbershopManager.BarbershopManager.Domain.Entities;
 using BarbershopManager.BarbershopManager.Domain.Repositories;
 using BarbershopManager.BarbershopManager.Domain.Services;
 
 namespace BarbershopManager.BarbershopManager.Application.UseCases.GetAllRevenue;
+
 public class GetAllRevenueUseCase : IGetAllRevenue
 {
     private readonly IRevenueRepository _repository;
@@ -23,5 +23,4 @@ public class GetAllRevenueUseCase : IGetAllRevenue
         var revenues = await _loggedRevenue.GetRevenue();
         return _mapper.Map<IEnumerable<ResponseRevenue>>(revenues);
     }
-}
 }

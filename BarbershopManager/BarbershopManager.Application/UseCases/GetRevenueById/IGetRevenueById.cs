@@ -4,6 +4,6 @@ namespace BarbershopManager.BarbershopManager.Application.UseCases.GetRevenueByI
 {
     public interface IGetRevenueById
     {
-        Task<ResponseRevenue> Execute();
+        Task<ResponseRevenue> Execute(Guid id);
     }
 }
