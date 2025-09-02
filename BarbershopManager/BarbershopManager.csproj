@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Braintree" Version="5.35.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BarbershopManager.Communication\" />
+    <Folder Include="BarbershopManager.Application\" />
+    <Folder Include="BarbershopManager.Exception\" />
+    <Folder Include="BarbershopManager.Infrastructure\" />
   </ItemGroup>
 
 </Project>
