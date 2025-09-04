@@ -49,7 +49,7 @@ Tabela de conteúdos
 - [ ] Filtro de exceções
 - [ ] Testes de unidade
 - [ ] Banco de dados
-- [x] Injeção de dependência
+- [ ] Injeção de dependência
 - [x] Assincronismo
 - [x] Princípios de SOLID
 
