@@ -20,7 +20,7 @@ public class GetAllRevenueUseCase : IGetAllRevenue
 
     public async Task<IEnumerable<ResponseRevenue>> Execute()
     {
-        var revenues = await _loggedRevenue.GetRevenue();
+        var revenues = await _repository.GetAll();
         return _mapper.Map<IEnumerable<ResponseRevenue>>(revenues);
     }
 }

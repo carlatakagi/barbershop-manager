@@ -4,6 +4,7 @@ using BarbershopManager.BarbershopManager.Application.UseCases.GetRevenueById;
 using BarbershopManager.BarbershopManager.Application.UseCases.CreateRevenue;
 using Microsoft.AspNetCore.Mvc;
 using BarbershopManager.BarbershopManager.Communication.Requests;
+using BarbershopManager.BarbershopManager.Application.UseCases.UpdateRevenue;
 
 namespace BarbershopManager.BarbershopManager.Api.Controllers
 {
@@ -13,15 +14,12 @@ namespace BarbershopManager.BarbershopManager.Api.Controllers
     public class BarbershopManagerController : ControllerBase
     {
         private readonly ILogger<BarbershopManagerController> _logger;
-        private readonly IRevenueService _revenueService;
 
         public BarbershopManagerController(
-            ILogger<BarbershopManagerController> logger,
-            IRevenueService revenueService
+            ILogger<BarbershopManagerController> logger
             )
         {
             _logger = logger;
-            _revenueService = revenueService;
         }
 
 
@@ -63,5 +61,17 @@ namespace BarbershopManager.BarbershopManager.Api.Controllers
             return CreatedAtAction(nameof(GetRevenueById), new { id = response.Id }, response);
         }
 
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateRevenue(
+            [FromServices] IUpdateRevenue useCase,
+            [FromBody] RequestUpdate revenue
+        )
+        {
+            var response = await useCase.Execute(revenue);
+            return Ok(response);
+        }
     }
 }

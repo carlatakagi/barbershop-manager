@@ -8,6 +8,8 @@ namespace BarbershopManager.BarbershopManager.Domain.Services
     {
         Task<IEnumerable<ResponseRevenue>> GetRevenue();
         Task<ResponseRevenue> GetRevenueById(Guid id);
-        Task<Revenue> CreateRevenue(RequestCreate revenue);
+        Task<ResponseCreateRevenue> CreateRevenue(RequestCreate revenue);
+        Task<ResponseUpdateRevenue> UpdateRevenue(RequestUpdate revenue);
+        Task DeleteRevenue(Guid id);
     }
 }

@@ -21,7 +21,7 @@ public class GetRevenueByIdUseCase : IGetRevenueById
 
     public async Task<ResponseRevenue> Execute(Guid id)
     {
-        var result = await _loggedRevenue.GetRevenueById(id);
+        var result = await _repository.GetById(id);
         if (result is null)
         {
             throw new NotFoundException("Revenue not found");
