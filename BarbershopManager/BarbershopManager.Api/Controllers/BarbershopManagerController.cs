@@ -4,6 +4,7 @@ using BarbershopManager.BarbershopManager.Application.UseCases.CreateRevenue;
 using Microsoft.AspNetCore.Mvc;
 using BarbershopManager.BarbershopManager.Communication.Requests;
 using BarbershopManager.BarbershopManager.Application.UseCases.UpdateRevenue;
+using BarbershopManager.BarbershopManager.Application.UseCases.DeleteRevenue;
 
 namespace BarbershopManager.BarbershopManager.Api.Controllers
 {
@@ -71,6 +72,25 @@ namespace BarbershopManager.BarbershopManager.Api.Controllers
         {
             var response = await useCase.Execute(revenue);
             return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteRevenue(
+            [FromServices] IGetRevenueById getRevenueByIdUseCase,
+            [FromServices] IDeleteRevenue deleteRevenueUseCase,
+            [FromRoute] Guid id
+        )
+        {
+            var revenue = await getRevenueByIdUseCase.Execute(id);
+            if (revenue == null)
+            {
+                return NotFound();
+            }
+
+            await deleteRevenueUseCase.Execute(id);
+            return NoContent();
         }
     }
 }
