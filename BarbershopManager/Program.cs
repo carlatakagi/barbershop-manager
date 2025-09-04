@@ -1,5 +1,4 @@
 using BarbershopManager.BarbershopManager.Domain.Repositories;
-using BarbershopManager.BarbershopManager.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

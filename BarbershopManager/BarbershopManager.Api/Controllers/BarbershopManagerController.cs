@@ -1,5 +1,4 @@
-﻿using BarbershopManager.BarbershopManager.Domain.Services;
-using BarbershopManager.BarbershopManager.Application.UseCases.GetAllRevenue;
+﻿using BarbershopManager.BarbershopManager.Application.UseCases.GetAllRevenue;
 using BarbershopManager.BarbershopManager.Application.UseCases.GetRevenueById;
 using BarbershopManager.BarbershopManager.Application.UseCases.CreateRevenue;
 using Microsoft.AspNetCore.Mvc;
