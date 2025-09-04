@@ -22,12 +22,7 @@ public class CreateRevenueUseCase : ICreateRevenue
 
     public async Task<ResponseRevenue> Execute(RequestCreate request)
     {
-        var result = await _loggedRevenue.CreateRevenue(request);
-        if (result is null)
-        {
-            throw new NotFoundException("Revenue not found");
-        }
-
+        var result = await _loggedRevenue.CreateRevenue(request) ?? throw new NotFoundException("Revenue not found");
         return _mapper.Map<ResponseRevenue>(result);
     }
 }
