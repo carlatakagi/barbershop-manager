@@ -46,9 +46,9 @@ Tabela de conteúdos
 
 - [x] Domain-Driven Design (DDD)
 - [x] Tratativa de erros
-- [x] Filtro de exceções
-- [x] Testes de unidade
-- [x] Banco de dados
+- [] Filtro de exceções
+- [] Testes de unidade
+- [] Banco de dados
 - [x] Injeção de dependência
 - [x] Assincronismo
 - [x] Princípios de SOLID
