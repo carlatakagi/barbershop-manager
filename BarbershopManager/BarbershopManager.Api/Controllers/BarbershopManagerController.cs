@@ -32,6 +32,10 @@ namespace BarbershopManager.BarbershopManager.Api.Controllers
         )
         {
             var response = await useCase.Execute();
+            if (response == null || !response.Any())
+            {
+                return NotFound("No revenue records found.");
+            }
             return Ok(response);
         }
 
