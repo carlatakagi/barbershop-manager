@@ -20,13 +20,18 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Braintree" Version="5.35.0" />
+    <PackageReference Include="Fluent.Infrastructure" Version="2.0.0-beta-01" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-  <ItemGroup>
+    <ItemGroup>
+		<ProjectReference Include="..\BarbershopManager.Infrastructure\BarbershopManager.Infrastructure.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
     <Folder Include="BarbershopManager.Application\UseCases\CreateRevenue\" />
     <Folder Include="BarbershopManager.Exception\" />
-    <Folder Include="BarbershopManager.Infrastructure\" />
   </ItemGroup>
 
 </Project>
