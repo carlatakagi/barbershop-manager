@@ -1,6 +1,7 @@
-namespace BarbershopManager.BarbershopManager.Communication.Responses;
-
-public class ResponseCreateRevenue
+namespace BarbershopManager.BarbershopManager.Communication.Responses
 {
-    public string Title { get; set; } = string.Empty;
+    public class ResponseCreateRevenue
+    {
+        public string Title { get; set; } = string.Empty;
+    }
 }

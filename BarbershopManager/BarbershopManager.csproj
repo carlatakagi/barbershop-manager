@@ -4,6 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Override to avoid incompatible compiler flags coming from legacy packages -->
+    <DebugType>pdbonly</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <!-- Workaround: disable SDK analyzers and set LangVersion to avoid analyzer/parse mismatches in this environment -->
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <LangVersion>Default</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,11 +30,6 @@
     <PackageReference Include="Fluent.Infrastructure" Version="2.0.0-beta-01" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
-
-    <ItemGroup>
-		<ProjectReference Include="..\BarbershopManager.Infrastructure\BarbershopManager.Infrastructure.csproj" />
-	</ItemGroup>
-
 
 	<ItemGroup>
     <Folder Include="BarbershopManager.Application\UseCases\CreateRevenue\" />

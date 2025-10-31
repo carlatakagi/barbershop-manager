@@ -1,29 +1,29 @@
-﻿using AutoMapper;
-using BarbershopManager.BarbershopManager.Communication.Responses;
+﻿using BarbershopManager.BarbershopManager.Communication.Responses;
 using BarbershopManager.BarbershopManager.Domain.Repositories;
 using Braintree.Exceptions;
 
-namespace BarbershopManager.BarbershopManager.Application.UseCases.GetRevenueById;
-
-public class GetRevenueByIdUseCase : IGetRevenueById
+namespace BarbershopManager.BarbershopManager.Application.UseCases.GetRevenueById
 {
-    private readonly IRevenueRepository _repository;
-    private readonly IMapper _mapper;
-
-    public GetRevenueByIdUseCase(IRevenueRepository repository, IMapper mapper)
+    public class GetRevenueByIdUseCase : IGetRevenueById
     {
-        _repository = repository;
-        _mapper = mapper;
-    }
+        private readonly IRevenueRepository _repository;
 
-    public async Task<ResponseRevenue> Execute(Guid id)
-    {
-        var result = await _repository.GetById(id);
-        if (result is null)
+        public GetRevenueByIdUseCase(IRevenueRepository repository)
         {
-            throw new NotFoundException("Revenue not found");
+            _repository = repository;
         }
 
-        return result;
+        public async Task<ResponseRevenue> Execute(Guid id)
+        {
+            var result = await _repository.GetById(id);
+            if (result is null)
+            {
+                throw new NotFoundException("Revenue not found");
+            }
+
+            // Repository already returns a ResponseRevenue DTO, return it directly
+            return result;
+        }
     }
 }
+

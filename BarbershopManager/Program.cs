@@ -7,6 +7,7 @@ using BarbershopManager.BarbershopManager.Domain.Repositories;
 using BarbershopManager.BarbershopManager.Infrastructure.Repositories;
 using Fluent.Infrastructure.FluentDBContext;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +26,7 @@ builder.Services.AddScoped<ICreateRevenue, CreateRevenueUseCase>();
 builder.Services.AddScoped<IDeleteRevenue, DeleteRevenueUseCase>();
 builder.Services.AddScoped<IUpdateRevenue, UpdateRevenueUseCase>();
 
-builder.Services.AddAutoMapper(typeof(Program));
+// AutoMapper registration is intentionally omitted here; individual components/tests create/configure IMapper as needed.
 
 
 var app = builder.Build();

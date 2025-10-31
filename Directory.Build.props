@@ -1,0 +1,15 @@
+<Project>
+  <!-- Prevent legacy NuGet packages from injecting old MSBuild/Compiler props (e.g. Microsoft.Net.Compilers)
+       and ensure analyzers are disabled early in the build to avoid analyzer assembly load errors in this environment. -->
+  <PropertyGroup>
+    <!-- Stop importing props from packages restored during NuGet; this prevents Microsoft.Net.Compilers.props from forcing old compiler flags -->
+    <ExcludeRestorePackageImports>true</ExcludeRestorePackageImports>
+
+    <!-- Disable analyzers at a project system level (workaround for environment analyzer assembly mismatches) -->
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+
+    <!-- Keep default language version (compiler will select appropriate version from SDK) -->
+    <LangVersion>Default</LangVersion>
+  </PropertyGroup>
+</Project>

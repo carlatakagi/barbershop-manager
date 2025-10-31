@@ -1,4 +1,5 @@
-﻿using BarbershopManager.BarbershopManager.Domain.Enum;
+﻿using System;
+using BarbershopManager.BarbershopManager.Domain.Enum;
 using System.ComponentModel.DataAnnotations;
 
 namespace BarbershopManager.BarbershopManager.Domain.Entities
@@ -20,6 +21,6 @@ namespace BarbershopManager.BarbershopManager.Domain.Entities
         public decimal Amount { get; set; }
 
         [Required]
-        public required PaymentType PaymentType { get; set; }
+        public PaymentType PaymentType { get; set; }
     }
 }

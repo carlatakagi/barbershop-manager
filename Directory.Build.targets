@@ -1,0 +1,8 @@
+<Project>
+  <!-- Ensure these values override any legacy package props (imported earlier) by placing them in Directory.Build.targets (imported at the end of each project file)
+       This prevents old Microsoft.Net.Compilers props from causing /debug:portable or invalid warning levels. -->
+  <PropertyGroup>
+    <DebugType>pdbonly</DebugType>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+</Project>

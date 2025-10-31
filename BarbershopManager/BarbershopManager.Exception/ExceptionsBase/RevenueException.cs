@@ -1,7 +1,15 @@
-namespace BarbershopManager.BarbershopManager.Exception.ExceptionsBase;
+using System;
+using System.Collections.Generic;
 
-public abstract class RevenueException(string message) : SystemException(message)
+namespace BarbershopManager.BarbershopManager.Exception.ExceptionsBase
 {
-    public abstract int StatusCode { get; }
-    public abstract List<string> GetErrors();
+    public abstract class RevenueException : SystemException
+    {
+        protected RevenueException(string message) : base(message)
+        {
+        }
+
+        public abstract int StatusCode { get; }
+        public abstract List<string> GetErrors();
+    }
 }
